@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Aeonic Pro";
+  src: url("https://db.onlinewebfonts.com/t/d95bf2f30035a050142565e03d44da71.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aeonic Pro";
+  src: url("https://db.onlinewebfonts.com/t/49ca791801a1830870b3fc0ced4c87fd.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-on-tertiary-fixed: #400011;
+  --color-on-tertiary-container: #db7584;
+  --color-surface-container-lowest: #0d0f0d;
+  --color-secondary-fixed: #ffdfa0;
+  --color-on-background: #e3e2e0;
+  --color-on-tertiary-fixed-variant: #7c2a3a;
+  --color-primary-fixed: #d5e3ff;
+  --color-on-error-container: #ffdad6;
+  --color-tertiary-fixed-dim: #ffb2bb;
+  --color-inverse-on-surface: #2f312f;
+  --color-outline: #8e9199;
+  --color-tertiary: #ffb2bb;
+  --color-on-surface-variant: #c4c6cf;
+  --color-surface: #121412;
+  --color-inverse-primary: #455f87;
+  --color-on-secondary-fixed-variant: #5c4300;
+  --color-primary-container: #0f2d52;
+  --color-inverse-surface: #e3e2e0;
+  --color-error-container: #93000a;
+  --color-surface-bright: #383938;
+  --color-tertiary-container: #590f21;
+  --color-surface-container-highest: #343533;
+  --color-secondary: #f6be39;
+  --color-on-primary: #143156;
+  --color-surface-tint: #adc8f5;
+  --color-outline-variant: #43474e;
+  --color-primary: #adc8f5;
+  --color-on-secondary: #402d00;
+  --color-on-secondary-container: #433000;
+  --color-on-tertiary: #5e1324;
+  --color-surface-container: #1f201e;
+  --color-background: #121412;
+  --color-on-primary-fixed: #001b3b;
+  --color-error: #ffb4ab;
+  --color-secondary-fixed-dim: #f6be39;
+  --color-surface-dim: #121412;
+  --color-on-error: #690005;
+  --color-on-surface: #e3e2e0;
+  --color-secondary-container: #c59300;
+  --color-on-secondary-fixed: #261a00;
+  --color-tertiary-fixed: #ffd9dc;
+  --color-surface-container-high: #292a29;
+  --color-on-primary-fixed-variant: #2d476e;
+  --color-on-primary-container: #7b95c0;
+  --color-primary-fixed-dim: #adc8f5;
+  --color-surface-variant: #343533;
+  --color-surface-container-low: #1a1c1a;
+
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  --spacing-margin-desktop: 80px;
+  --spacing-margin-tablet: 40px;
+  --spacing-gutter: 32px;
+  --spacing-margin-mobile: 24px;
+  --spacing-unit: 8px;
+  --spacing-container-max: 1280px;
+
+  --font-display-lg: "Aeonic Pro", sans-serif;
+  --font-body-lg: "Aeonic Pro", sans-serif;
+  --font-headline-lg-mobile: "Aeonic Pro", sans-serif;
+  --font-body-md: "Aeonic Pro", sans-serif;
+  --font-headline-lg: "Aeonic Pro", sans-serif;
+  --font-display-md: "Aeonic Pro", sans-serif;
+  --font-label-sm: "Aeonic Pro", sans-serif;
+
+  --text-display-lg: 72px;
+  --text-display-lg--line-height: 80px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-lg--font-weight: 400;
+
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-md--font-weight: 400;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--font-weight: 600;
+
+  --text-display-md: 48px;
+  --text-display-md--line-height: 56px;
+  --text-display-md--font-weight: 600;
+
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--letter-spacing: 0.1em;
+  --text-label-sm--font-weight: 600;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+body {
+  background: radial-gradient(circle at 50% -20%, #0f2d52 0%, #121412 70%);
+  color: #e3e2e0;
+  overflow-x: hidden;
+  font-family: "Aeonic Pro", sans-serif;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #121412; }
+::-webkit-scrollbar-thumb { background: #c59300; border-radius: 10px; }
+
+/* Glass utilities */
+.glass-card {
+  background: rgba(15, 45, 82, 0.2);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(246, 190, 57, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+  border-color: rgba(246, 190, 57, 0.3);
+  background: rgba(15, 45, 82, 0.3);
+}
+
+.glass-panel,
+.glass-container {
+  background: rgba(18, 20, 18, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(246, 190, 57, 0.1);
+}
+
+.gold-glow {
+  text-shadow: 0 0 20px rgba(246, 190, 57, 0.3);
+}
+
+.floating-accent {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(246, 190, 57, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.text-underline-draw {
+  position: relative;
+}
+.text-underline-draw::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #f6be39;
+  transition: width 0.6s ease;
+}
+.text-underline-draw:hover::after {
+  width: 100%;
+}
+
+.inner-glow-btn {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 15px rgba(197, 147, 0, 0.3);
+}
+
+.gold-underline {
+  position: relative;
+}
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #f6be39;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right;
+}
+.gold-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
